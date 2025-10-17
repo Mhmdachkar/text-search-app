@@ -1,107 +1,88 @@
-Text Search Application
-A React-based search application that allows users to search through articles and highlights matching keywords in real-time.
-Features
+# Text Search Application
 
-🔍 Real-time search filtering
-✨ Highlighted search results (yellow background)
-📊 Word count display for each article
-🎨 Modern, responsive UI with Tailwind CSS
-📱 Mobile-friendly design
+A simple React search app that lets you search through articles and highlights matching keywords in real-time.
 
-Prerequisites
-Before running this project, make sure you have the following installed:
+## Quick Start
 
-Node.js (v14 or higher)
-npm (comes with Node.js)
+### Prerequisites
+- Node.js (v14 or higher)
+- npm
 
-Installation & Setup
+### Installation
 
-Create a new React app (if you don't have one already):
-
-bash   npx create-react-app text-search-app
+1. Create a new React app:
+   ```bash
+   npx create-react-app text-search-app
    cd text-search-app
+   ```
 
-Copy the component code to your project:
-
-Open src/App.js in your project
-Replace the entire content with the search app code from this artifact
-
-
-Install required dependencies (Tailwind CSS and lucide-react):
-
-bash   npm install -D tailwindcss postcss autoprefixer
+2. Install dependencies:
+   ```bash
+   npm install -D tailwindcss postcss autoprefixer
    npm install lucide-react
    npx tailwindcss init -p
+   ```
 
-Configure Tailwind CSS:
+3. Copy the search app code to `src/App.js`
 
-Open tailwind.config.js
-Replace the content with:
-
-
-
-javascript     export default {
-       content: [
-         "./index.html",
-         "./src/**/*.{js,jsx,ts,tsx}",
-       ],
-       theme: {
-         extend: {},
-       },
-       plugins: [],
-     }
-
-Add Tailwind directives to src/index.css:
-
-css   @tailwind base;
+4. Update `src/index.css`:
+   ```css
+   @tailwind base;
    @tailwind components;
    @tailwind utilities;
+   ```
 
-Start the development server:
+5. Update `tailwind.config.js`:
+   ```javascript
+   export default {
+     content: [
+       "./index.html",
+       "./src/**/*.{js,jsx,ts,tsx}",
+     ],
+     theme: {
+       extend: {},
+     },
+     plugins: [],
+   }
+   ```
 
-bash   npm start
-The app will open in your browser at http://localhost:3000
-How to Use
+6. Start the app:
+   ```bash
+   npm start
+   ```
 
-Type keywords or phrases in the search box
-Articles matching your search will be displayed
-Matching text will be highlighted in yellow
-View the word count for each article excerpt
-Clear the search box to see all articles
+## How to Use
 
-Project Structure
+1. Type a keyword in the search box
+2. Matching articles will appear with highlighted text
+3. See the total number of matches found
+4. Clear the search to see all articles
 
-Articles Array: Contains 6 sample articles with titles, dates, and excerpts
-HighlightedText Component: Handles text highlighting logic using regex
-countWords Function: Counts words in article excerpts
-SearchApp Component: Main component managing search state and filtering
+## Features
 
-Technologies Used
+- 🔍 Real-time search filtering
+- ✨ Highlighted search results
+- 📊 Match counter
+- 🎨 Clean, modern UI
+- 📱 Responsive design
 
-React (with Hooks: useState, useMemo)
-Tailwind CSS (for styling)
-Lucide React (for icons)
+## Technologies
 
-Customization
-Add More Articles
-Edit the articles array in the component to add more content:
-javascript{
+- React with Hooks
+- Tailwind CSS
+- Lucide React Icons
+
+## Customization
+
+Add more articles by editing the `articles` array in `App.js`:
+
+```javascript
+{
   id: 7,
-  title: "Your Article Title",
+  title: "Your Title",
   date: "Your Date",
-  excerpt: "Your article excerpt here..."
+  excerpt: "Your excerpt..."
 }
-Change Highlight Color
-Modify the bg-yellow-300 class in the HighlightedText component to any Tailwind color class (e.g., bg-blue-300, bg-green-300)
-Customize Styling
-All styling is done with Tailwind CSS utility classes. Update classes in the JSX to match your design preferences.
-Browser Support
-This app works in all modern browsers:
+```
 
-Chrome
-Firefox
-Safari
-Edge
-
-License
-This project is free to use and modify.
+Change the highlight color by modifying `bg-yellow-300` to any Tailwind color like `bg-blue-300` or `bg-green-300`.
